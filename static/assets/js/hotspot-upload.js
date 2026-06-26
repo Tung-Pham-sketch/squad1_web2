@@ -17,19 +17,21 @@ document.addEventListener('DOMContentLoaded', function(){
         const fileInput =
             placeholder.querySelector('.image-input');
 
+        if (!uploadBtn && !editBtn) return;
+
         //----------------------------------
         // INITIAL STATE
         //----------------------------------
 
         if(img && img.getAttribute('src')){
 
-            uploadBtn.style.display = 'none';
-            editBtn.style.display = 'block';
+            if(uploadBtn) uploadBtn.style.display = 'none';
+            if(editBtn) editBtn.style.display = 'block';
 
         }else{
 
-            uploadBtn.style.display = 'block';
-            editBtn.style.display = 'none';
+            if(uploadBtn) uploadBtn.style.display = 'block';
+            if(editBtn) editBtn.style.display = 'none';
 
         }
 
@@ -37,12 +39,12 @@ document.addEventListener('DOMContentLoaded', function(){
         // OPEN FILE DIALOG
         //----------------------------------
 
-        uploadBtn.addEventListener(
+        if(uploadBtn) uploadBtn.addEventListener(
             'click',
             () => fileInput.click()
         );
 
-        editBtn.addEventListener(
+        if(editBtn) editBtn.addEventListener(
             'click',
             () => fileInput.click()
         );
@@ -78,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     image.src = e.target.result;
 
-                    uploadBtn.style.display = 'none';
-                    editBtn.style.display = 'block';
+                    if(uploadBtn) uploadBtn.style.display = 'none';
+                    if(editBtn) editBtn.style.display = 'block';
                 };
 
                 const hotspot =
