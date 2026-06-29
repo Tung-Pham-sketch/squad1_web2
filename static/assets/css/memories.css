@@ -502,23 +502,62 @@ MOBILE
 
 @media(max-width:768px){
 
+    /* ---------- TOP BAR ----------
+       Row 1 → back-btn | logo | login/logout + mode-status
+       Row 2 → page title (full width)
+    ---------------------------------------- */
+
     .topbar{
-        padding:12px 14px;
-        gap:10px;
+        padding:10px 14px;
+        gap:0;
+        flex-wrap:wrap;
     }
 
     .back-btn{
+        order:1;
         padding:8px 12px;
         font-size:13px;
     }
 
-    .page-title{
-        font-size:14px;
-        line-height:1.4;
+    .logo-area{
+        order:2;
+        flex:1;
+        display:flex;
+        justify-content:center;
     }
 
     .logo-area img{
-        height:38px;
+        height:36px;
+    }
+
+    .mode-area{
+        order:3;
+    }
+
+    .mode-btn{
+        padding:8px 12px;
+        font-size:13px;
+    }
+
+    .mode-status{
+        order:4;
+    }
+
+    .view-mode,
+    .edit-mode{
+        padding:6px 10px;
+        font-size:12px;
+    }
+
+    .page-title{
+        order:5;
+        width:100%;
+        font-size:13px;
+        line-height:1.4;
+        text-align:center;
+        padding-top:8px;
+        border-top:1px solid rgba(255,255,255,0.2);
+        margin-top:8px;
     }
 
     .container{

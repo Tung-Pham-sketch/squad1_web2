@@ -75,6 +75,10 @@ def utility_processor():
 def rules():
     return render_template("rules.html")
 
+@app.route('/memories')
+def memories():
+    return render_template("memories.html")
+
 @app.route('/hotspot')
 def hotspot():
 
